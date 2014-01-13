@@ -22,6 +22,8 @@ var board = [["","",""],["","",""],["","",""]];
 var xWin = "XXX";
 var oWin = "OOO";
 var win = false;
+var timerX;
+var timerO;
 
 var play = function() {
   for (i = 0; i < elements.length; i++) {
@@ -32,13 +34,13 @@ var play = function() {
           alternate++;
           counter++;
           var paramPass = this;
-          setTimeout(function() {disappear(paramPass);}, 10000)
+          timerX = setTimeout(function() {disappear(paramPass);}, 10000)
         } else {
           this.className = "omove";
           alternate++;
           counter++;
           var paramPass = this;
-          setTimeout(function() {disappear(paramPass);}, 10000)
+          timerO = setTimeout(function() {disappear(paramPass);}, 10000)
         }
       }
       position(this);
@@ -100,8 +102,11 @@ var reset = function() {
       rows[i].childNodes[j].className = "cell animated bounceIn";
     }
   }
+  clearTimeout(timerX);
+  clearTimeout(timerO);
   board = [["","",""],["","",""],["","",""]];
   counter = 0;
+  alternate = 0;
   win = false;
 }
 
