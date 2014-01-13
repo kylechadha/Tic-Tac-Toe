@@ -1,0 +1,133 @@
+/*To Do List:
+1. Add responsiveness
+*/
+
+html {
+  background: url(../img/beyond-the-clouds-2560x1600.jpg) no-repeat center center;
+}
+
+body {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+nav {
+  position: absolute; /*is this right?*/
+  top: 120px;
+  left: 20px;
+  float: left;
+  width: 25%;
+/*  background: url(../scroll.svg) center center;
+  background-size: cover;
+  height: 300px;
+*/}
+
+nav li {
+  margin: 5px 0;
+  padding: 7px 13px;
+  width: 60%;
+  transition: .5s;
+}
+
+nav li:hover {
+  background-color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+nav li:hover a {
+  color: black;
+}
+
+nav p {
+  width: 200px;
+  padding: 20px 0 0 53px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 64px;
+  margin: 16px 0 6px 0;
+  color: white;
+}
+
+h2 {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+h2 span {
+  color: tomato;
+}
+
+.threerules {
+  position: fixed;
+  right: 20px;
+  bottom: 5px;
+}
+
+.row {
+  display: inline-block;
+}
+
+.cell {
+  float: left;
+  padding: 20px;
+  height: 130px;
+  width: 130px;
+  margin: 9px;
+  background-color: white;  
+  /*background-color: #58c9f3;  */
+  transition: .3s;
+  border-radius: 4px;
+}
+
+.cell:hover {
+  background-color: #FFC280;
+}
+
+.xmove {
+  background-color: #FFC280;
+  float: left;
+  padding: 20px;
+  height: 130px;
+  width: 130px;
+  margin: 9px;
+}
+
+.xmove:after {
+  font-family: Verdana;
+  text-align: center;
+  font-size: 110px;
+  line-height: 130px;
+  content: "X";
+}
+
+.omove {
+  background-color: #FFC280;
+  float: left;
+  padding: 20px;
+  height: 130px;
+  width: 130px;
+  margin: 9px;
+}
+
+.omove:after {
+  font-family: Verdana;
+  text-align: center;
+  font-size: 110px;
+  line-height: 130px;
+  content: "O";
+}
