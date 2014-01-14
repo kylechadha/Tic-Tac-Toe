@@ -69,11 +69,12 @@ h2 {
 }
 
 h2 span {
-  color: tomato;
+  color: darkblue;
 }
 
 .threerules {
   position: fixed;
+  color: white;
   right: 20px;
   bottom: 5px;
 }
