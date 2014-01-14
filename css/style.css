@@ -1,98 +1,108 @@
+/*Questions:
+0. Fix the cloud in the nav
+1. How do I style the divs so I can remove the <br>'s?
+2. Is it better to be more specific if you can? Ie: should I add '.classthree' infront of h2?
+3. What's the best way to style the nav if I want it equidistant between the board and the left window edge? Absolute positioning with media queries, relative positioning, % widths?
+4. In the CSS styles for nav, why do I have to set the color in 'nav li:hover a' vs. 'nav li:hover'
+5. Seems like a lot of fonts are missing?
+6. Best practices for creating "explainer text" -- use CSS or JS? JS onclick to remove display: none;?
+7. Way to lighten the background image? Is it positioning properly?
+*/
+
 /*To Do List:
 1. Add responsiveness
 */
 
-html {
-  background: url(../img/beyond-the-clouds-2560x1600.jpg) no-repeat center center;
-}
+/* Document Styles */
 
 body {
+  background: url(../img/beyond-the-clouds-2560x1600.jpg) no-repeat center center;
+  /*background-size: cover;*/
+  user-select: none;
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      
-  user-select: none;
 }
 
+/* Navigation Styles */
+
 nav {
-  position: absolute; /*is this right?*/
-  top: 120px;
-  left: 20px;
-  float: left;
-  width: 25%;
-/*  background: url(../scroll.svg) center center;
+  background: url(../img/whitecloud-big-md.png);
   background-size: cover;
-  height: 300px;
-*/}
+  position: absolute;
+  top: 115px;
+  left: 70px;
+  width: 200px;
+}
 
 nav li {
   margin: 5px 0;
   padding: 7px 13px;
-  width: 60%;
+  border-radius: 3px;
   transition: .5s;
 }
 
 nav li:hover {
-  background-color: white;
+  background-color: black;
 }
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: black;
+  /*font-family: cursive;*/
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
 }
 
 nav li:hover a {
-  color: black;
+  color: white;
 }
 
-nav p {
-  width: 200px;
-  padding: 20px 0 0 53px;
-  font-size: 14px;
-  line-height: 18px;
+/* Game Board Styles */
+
+h1 {
+  margin: 16px 0 6px 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 64px;
+  color: white;
 }
 
 .container {
   text-align: center;
 }
 
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 64px;
-  margin: 16px 0 6px 0;
+.row {
+  display: inline-block;
+}
+
+.threerules {
+  position: fixed;
+  right: 20px;
+  bottom: 5px;
   color: white;
 }
 
 h2 {
-  font-size: 12px;
   margin-top: 20px;
+  font-size: 12px;
 }
 
 h2 span {
   color: darkblue;
 }
 
-.threerules {
-  position: fixed;
-  color: white;
-  right: 20px;
-  bottom: 5px;
-}
-
-.row {
-  display: inline-block;
-}
+/* Cell Styles */
 
 .cell {
   float: left;
-  padding: 20px;
   height: 130px;
   width: 130px;
+  padding: 20px;
   margin: 9px;
-  background-color: white;  
-  /*background-color: #58c9f3;  */
-  transition: .3s;
+  background-color: white;
+  /*background-color: #58c9f2;  */
   border-radius: 4px;
+  transition: .3s;
 }
 
 .cell:hover {
@@ -100,35 +110,35 @@ h2 span {
 }
 
 .xmove {
-  background-color: #FFC280;
   float: left;
-  padding: 20px;
   height: 130px;
   width: 130px;
+  padding: 20px;
   margin: 9px;
+  background-color: #FFC280;
 }
 
 .xmove:after {
-  font-family: Verdana;
+  content: "X";
   text-align: center;
+  font-family: Verdana;
   font-size: 110px;
   line-height: 130px;
-  content: "X";
 }
 
 .omove {
-  background-color: #FFC280;
   float: left;
-  padding: 20px;
   height: 130px;
   width: 130px;
+  padding: 20px;
   margin: 9px;
+  background-color: #FFC280;
 }
 
 .omove:after {
-  font-family: Verdana;
+  content: "O";
   text-align: center;
+  font-family: Verdana;
   font-size: 110px;
   line-height: 130px;
-  content: "O";
 }
