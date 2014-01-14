@@ -22,6 +22,8 @@ var board = [["","",""],["","",""],["","",""]];
 var xWin = "XXX";
 var oWin = "OOO";
 var win = false;
+var pendingX = {};
+var pendingO = {};
 var timerX;
 var timerO;
 
@@ -34,13 +36,15 @@ var play = function() {
           alternate++;
           counter++;
           var paramPass = this;
-          timerX = setTimeout(function() {disappear(paramPass);}, 10000)
+          timerX = setTimeout(function() {delete pendingX[timerX]; disappear(paramPass);}, 10000);
+          pendingX[timerX] = 1;
         } else {
           this.className = "omove";
           alternate++;
           counter++;
           var paramPass = this;
-          timerO = setTimeout(function() {disappear(paramPass);}, 10000)
+          timerO = setTimeout(function() {delete pendingO[timerO]; disappear(paramPass);}, 10000);
+          pendingO[timerO] = 1;
         }
       }
       position(this);
@@ -102,12 +106,22 @@ var reset = function() {
       rows[i].childNodes[j].className = "cell animated bounceIn";
     }
   }
-  clearTimeout(timerX);
-  clearTimeout(timerO);
   board = [["","",""],["","",""],["","",""]];
   counter = 0;
   alternate = 0;
   win = false;
+  clearTimer();
+}
+
+var clearTimer = function() {
+  for (var timerX in pendingX) {
+    clearTimeout(timerX);
+    delete pendingX[timerX];
+  }
+  for (var timerO in pendingO) {
+    clearTimeout(timerO);
+    delete pendingO[timerO];
+  }
 }
 
 window.onload = play;
