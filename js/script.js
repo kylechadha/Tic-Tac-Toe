@@ -114,11 +114,11 @@ var reset = function() {
 }
 
 var clearTimer = function() {
-  for (var timerX in pendingX) {
+  for (var timerX in pendingX) if (pendingX.hasOwnProperty(timerX)) {
     clearTimeout(timerX);
     delete pendingX[timerX];
   }
-  for (var timerO in pendingO) {
+  for (var timerO in pendingO) if (pendingO.hasOwnProperty(timerO)) {
     clearTimeout(timerO);
     delete pendingO[timerO];
   }

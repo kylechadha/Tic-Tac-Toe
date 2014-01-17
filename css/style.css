@@ -1,27 +1,27 @@
 /*Questions:
-0. Fix the cloud in the nav
-1. How do I style the divs so I can remove the <br>'s?
-2. Is it better to be more specific if you can? Ie: should I add '.classthree' infront of h2?
-3. What's the best way to style the nav if I want it equidistant between the board and the left window edge? Absolute positioning with media queries, relative positioning, % widths?
-4. In the CSS styles for nav, why do I have to set the color in 'nav li:hover a' vs. 'nav li:hover'
-5. Seems like a lot of fonts are missing?
+
 6. Best practices for creating "explainer text" -- use CSS or JS? JS onclick to remove display: none;?
-7. Way to lighten the background image? Is it positioning properly?
+Left side div (float: left, set width so that the two below have to stacks)
+>Div for nav
+>Div for helper text
+
 */
 
 /*To Do List:
-1. Add responsiveness
+1. Clean up margins / formatting for cloud nav (floats, etc.) and container
+2. Add in "helper" div below nav
+3. Create mobile version / add responsiveness
 */
 
 /* Document Styles */
 
 body {
-  background: url(../img/beyond-the-clouds-2560x1600.jpg) no-repeat center center;
+  background: url(../img/beyond-the-clouds-light-2560x1600.jpg) no-repeat center center;
   /*background-size: cover;*/
   user-select: none;
   -webkit-user-select: none;  
   -moz-user-select: none;    
-  -ms-user-select: none;      
+  -ms-user-select: none;
 }
 
 /* Navigation Styles */
@@ -29,16 +29,24 @@ body {
 nav {
   background: url(../img/whitecloud-big-md.png);
   background-size: cover;
-  position: absolute;
+  position: relative;
   top: 115px;
-  left: 70px;
-  width: 200px;
+  margin-left: 5%;
+  margin-right: 5%;
+  float: left;
+  width: 250px;
+  height: 148px;
+}
+
+nav ul {
+  margin-top: 46px;
 }
 
 nav li {
-  margin: 5px 0;
-  padding: 7px 13px;
+  margin: 5px 0 5px 44px;
+  padding: 1px 5px;
   border-radius: 3px;
+  width: 80px;
   transition: .5s;
 }
 
@@ -49,9 +57,8 @@ nav li:hover {
 nav a {
   text-decoration: none;
   color: black;
-  /*font-family: cursive;*/
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-family: 'Lato', serif, sans-serif;
+  font-size: 16px;
 }
 
 nav li:hover a {
@@ -62,17 +69,21 @@ nav li:hover a {
 
 h1 {
   margin: 16px 0 6px 0;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', serif, sans-serif;
   font-size: 64px;
   color: white;
 }
 
 .container {
   text-align: center;
+  margin: 0 auto;
+  width: 564px;
+  /*border: 2px solid red;*/
+  float: left;
 }
 
 .row {
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .threerules {
@@ -88,7 +99,7 @@ h2 {
 }
 
 h2 span {
-  color: darkblue;
+  color: steelblue;
 }
 
 /* Cell Styles */
@@ -141,4 +152,26 @@ h2 span {
   font-family: Verdana;
   font-size: 110px;
   line-height: 130px;
+}
+
+@media (max-width: 800px) and (min-width: 300px) {
+  body {
+    padding-top: 40px;
+  }
+  nav {
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    background-image: none;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+  }
+  nav li {
+    display: inline;
+    margin: 0;
+  }
+  nav ul {
+    margin: 0;
+  }
 }
