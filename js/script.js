@@ -1,18 +1,4 @@
 
-/*Questions:
-1. What of the variables in the global section actually need to be global? Is it better to keep things global, even if there is only one function using them?
-2. Do I need to pass "this" to 'Position' or will this just be available since the onload function calls it?
-3. Should I name the onload function? What's best practice here
-4. What's the best order for my functions. What's the reason for putting the onclick in onload again?
-5. Can I refactor the xWins / oWins checks to be simpler? Seems like a lot of redundancy.
-6. Differences or best practices for single quotes vs. double quotes?
-*/
-
-/*To Do List:
-1. Add timing elements
-2. Add Player 1 v Player 2 score keeper
-*/
-
 var elements = document.getElementsByClassName('cell');
 var rows = document.getElementsByClassName('row');
 var header = document.getElementsByTagName('h1');

@@ -1,17 +1,3 @@
-/*Questions:
-
-6. Best practices for creating "explainer text" -- use CSS or JS? JS onclick to remove display: none;?
-Left side div (float: left, set width so that the two below have to stacks)
->Div for nav
->Div for helper text
-
-*/
-
-/*To Do List:
-1. Clean up margins / formatting for cloud nav (floats, etc.) and container
-2. Add in "helper" div below nav
-3. Create mobile version / add responsiveness
-*/
 
 /* Document Styles */
 
